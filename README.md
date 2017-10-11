@@ -124,3 +124,14 @@ console.log(null >= 0); // true
 >* Equality Comparison: only calls `ToNumber` on Strings, Numbers, and Booleans.
 >
 ([source](https://stackoverflow.com/a/2910608/100184))
+
+
+### 7. Floating point numericals sometimes behave unexpectedly
+
+```js
+console.log(0.1 + 0.2 == 0.3); // false
+console.log(0.1 + 0.2);        // 0.30000000000000004
+```
+
+JavaScript (and [some other languages as well](http://0.30000000000000004.com/)) doesn't calculate decimal fractions the same way a child in elementary school will do the calculation. As such, some calculations could result with some precision because of the [floating point algorithm](https://en.wikipedia.org/wiki/Floating-point_arithmetic). 
+
